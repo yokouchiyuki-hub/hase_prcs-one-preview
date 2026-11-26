@@ -678,6 +678,12 @@ fbq('track', 'PageView');
   #openhouse .visit-points{grid-template-columns:repeat(2,1fr);}
   /* 物件概要下のスライダー直後に置いた予約ボタン：PCはスライダー下の大きな余白を詰めて、写真のすぐ下に出す */
   @media(min-width:761px){ #visit .visit-swiper-wrap{padding-bottom:2em;} #visit .cta-after-visit{padding:3em 0 12vh;} }
+  /* SP：物件概要の後のCTAは上下の余白を詰める（セクションの下余白と重なって空きすぎるため） */
+  @media(max-width:760px){
+    #visit .cta-after-visit{padding:0;}
+    .design{padding-top:3.5em;}   /* 収納の文章の下と写真の間を詰める（PCは20vhのまま） */
+    #details .spec-lead{padding-top:1.4em;}   /* SPは上に区切り線が入るので、線との間をあける */
+  }
   @media(max-width:760px){ #openhouse .visit-points{grid-template-columns:1fr;} }
 
   /* ---------- 会社紹介：写真・受賞・実績スライダー ---------- */
@@ -1022,7 +1028,7 @@ fbq('track', 'PageView');
     .form-tel-vline{width:310px;height:1px;}
     .form-tel-info-pc{display:none;}
     .form-tel-info-sp{display:block;text-align:center;margin-top:-15px;}
-    footer .footer-nav{flex-direction:column;align-items:flex-start;padding:0 clamp(1.5rem,5vw,2.5rem);margin-top:1.8em;gap:.6em;}
+    footer .footer-nav{flex-direction:column;align-items:center;padding:0 clamp(1.5rem,5vw,2.5rem);margin-top:1.8em;gap:.6em;}
     footer .footer-nav a{padding:0;border-left:none!important;}
   }
   /* iPad範囲のみ（768px〜960px）：富士山ビジュアルの調整 */
@@ -1866,8 +1872,8 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
   <div class="narrow">
     <div class="ch-head ch-head-center">
       <p class="jp-label">はじめての方へ</p>
-      <h2 class="ch-title">内覧までの<br class="sp-only">流れ</h2>
-      <div class="ch-sub">初めての方でも安心。お申し込みから内覧まで、3つのステップです。</div>
+      <h2 class="ch-title">内覧までの流れ</h2>
+      <div class="ch-sub">初めての方でも安心。<br class="sp-only">お申し込みから内覧まで、<br class="sp-only">3つのステップです。</div>
     </div>
   </div>
   <div class="wrap">
