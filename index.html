@@ -380,6 +380,8 @@ fbq('track', 'PageView');
   .intro-photo img{width:100%;height:auto;display:block;}
   .intro p{font-size:clamp(1.1rem,2.4vw,1.55rem);line-height:2;letter-spacing:.3em;color:var(--ivory);font-weight:300;}
   .intro .accent{color:#f8d8a5;}
+  /* 言葉のまとまりの途中で折り返さない（SPで「選びま／した」のような改行を防ぐ）。まとまりの間でだけ折り返す */
+  .nw{white-space:nowrap;}
   .intro .last{margin-top:2.6em;color:#ffffff;font-size:clamp(.95rem,1.8vw,1.1rem);font-weight:300;letter-spacing:.2em;}
   /* 間取り図（PC横3列 / SP縦3列 / クリックでポップアップ） */
   .floor-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:4.5em;max-width:1000px;margin:9vh auto 0;}
@@ -961,7 +963,7 @@ fbq('track', 'PageView');
     /* SPは案内を間取り図の上に出す（PC用の下の案内は隠す） */
     /* SPの導入部分：上余白10vh・下余白なし、本文は1.3rem／行間1.8／字間.2em */
     .intro{padding:10vh 0 0;}
-    .intro p{font-size:1.3rem;line-height:1.8;letter-spacing:.2em;}
+    .intro p{font-size:1.14rem;line-height:1.8;letter-spacing:.2em;}
     .intro .floor-hint-pc{display:none;}
     /* 文字の幅だけを同色の線で囲む（display:table で中央寄せ。字間ぶん右が空くので左の余白で補正） */
     .intro .floor-hint-sp{display:table;margin:9vh auto 0;font-size:.95rem;color:#b89a6a;border:1px solid #b89a6a;padding:.6em 1.2em .6em calc(1.2em + .14em);}
@@ -1406,9 +1408,9 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
       </picture>
     </figure>
 
-    <p class="last">家には、二種類あります。<br class="sp-only">建てた時が、いちばん美しい家。<br>そして歳月とともに美しくなる家。<br>このHASEは迷うことなく後者を選びました。<br>本物の素材をあしらったその佇まいを、<br class="sp-only">どうぞ現地でご覧ください。</p>
+    <p class="last">家には、二種類あります。<br class="sp-only">建てた時が、いちばん美しい家。<br>そして歳月とともに美しくなる家。<br><span class="nw">このHASEは</span><span class="nw">迷うことなく</span><span class="nw">後者を選びました。</span><br><span class="nw">本物の素材をあしらった</span><span class="nw">その佇まいを、</span><br class="sp-only">どうぞ現地でご覧ください。</p>
 
-    <p class="floor-hint floor-hint-sp">間取りをタップすると拡大できます</p>
+    <p class="floor-hint floor-hint-sp"><span class="nw">間取りをタップすると</span><span class="nw">拡大できます</span></p>
     <div class="floor-plans">
       <figure class="floor-item">
         <div class="floor-item-img"><img width="443" height="455" loading="lazy" data-lsrc="floor_img/1F0.png" data-lsrcset="floor_img/1F0.png 450w, floor_img/1F0_hd.png 1330w" sizes="(max-width:760px) 300px, 30vw" data-full="floor_img/1F0_hd.png" alt="1階 間取り図"></div>
@@ -1558,21 +1560,21 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
       <div class="exp-card" role="button" tabindex="0">
         <div class="exp-card-img"><picture><source type="image/webp" data-lsrcset="web2/oyaishi_card.webp"><img loading="lazy" data-lsrc="web2/oyaishi_card.jpg" alt="本物の素材と意匠に触れる"></picture></div>
         <h3>本物の素材と意匠に触れる</h3>
-        <p class="exp-sum">本物の銘木・銘石と上質な設備、全館空調の心地よさを体感。</p>
+        <p class="exp-sum">本物の銘木・銘石と上質な設備、<span class="nw">全館空調の</span><span class="nw">心地よさを体感。</span></p>
         <p class="exp-detail" hidden>銘木や銘石といった触れるほどに深みを増す本物の素材と、イタリア製キッチンや高級バスなどの日常を超える仕様。一年中快適な全館空調が織りなす、至高の暮らしをご体感いただけます。</p>
         <span class="exp-more">詳しく見る ＋</span>
       </div>
       <div class="exp-card" role="button" tabindex="0">
         <div class="exp-card-img"><picture><source type="image/webp" data-lsrcset="web2/garage_card.webp"><img loading="lazy" data-lsrc="web2/garage_card.jpg" alt="ガレージ駐車体験"></picture></div>
         <h3>ガレージ駐車体験</h3>
-        <p class="exp-sum">愛車で実際に駐車し、広さと乗り降りのしやすさを確かめられます。</p>
+        <p class="exp-sum">愛車で実際に駐車し、<span class="nw">広さと</span><span class="nw">乗り降りのしやすさを</span><span class="nw">確かめられます。</span></p>
         <p class="exp-detail" hidden>ご自身の愛車を実際にインナーガレージへお乗り入れいただき、収まり具合や乗り降りのしやすさを体感していただけます。奥行き6.3m・横幅3.5m・高さ2.8mの空間に、ご自宅の駐車場では分からなかった「余白」を確かめてください。</p>
         <span class="exp-more">詳しく見る ＋</span>
       </div>
       <div class="exp-card" role="button" tabindex="0">
         <div class="exp-card-img"><picture><source type="image/webp" data-lsrcset="slider/9_card.webp"><img loading="lazy" data-lsrc="slider/9_card.jpg" alt="波の音に耳をすませる"></picture></div>
         <h3>波の音に耳をすませる</h3>
-        <p class="exp-sum">16.25帖のルーフバルコニーで、360°の眺望とさざ波の音を。</p>
+        <p class="exp-sum">16.25帖のルーフバルコニーで、<span class="nw">360°の眺望と</span><span class="nw">さざ波の音を。</span></p>
         <p class="exp-detail" hidden>16.25帖のルーフバルコニーから、360°パノラマで文学館の山と遠くの海を望む。耳をすませば、さざ波の音。都心では得られない開放感がここにあります。</p>
         <span class="exp-more">詳しく見る ＋</span>
       </div>
@@ -1760,21 +1762,21 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
       <div class="exp-card" role="button" tabindex="0">
         <div class="exp-card-img"><picture><source type="image/webp" srcset="web2/oyaishi_card.webp"><img loading="lazy" src="web2/oyaishi_card.jpg" alt="本物の素材と意匠に触れる"></picture></div>
         <h3>本物の素材と意匠に触れる</h3>
-        <p class="exp-sum">本物の銘木・銘石と上質な設備、全館空調の心地よさを体感。</p>
+        <p class="exp-sum">本物の銘木・銘石と上質な設備、<span class="nw">全館空調の</span><span class="nw">心地よさを体感。</span></p>
         <p class="exp-detail" hidden>銘木や銘石といった触れるほどに深みを増す本物の素材と、イタリア製キッチンや高級バスなどの日常を超える仕様。一年中快適な全館空調が織りなす、至高の暮らしをご体感いただけます。</p>
         <span class="exp-more">詳しく見る ＋</span>
       </div>
       <div class="exp-card" role="button" tabindex="0">
         <div class="exp-card-img"><picture><source type="image/webp" srcset="web2/garage_card.webp"><img loading="lazy" src="web2/garage_card.jpg" alt="ガレージ駐車体験"></picture></div>
         <h3>ガレージ駐車体験</h3>
-        <p class="exp-sum">愛車で実際に駐車し、広さと乗り降りのしやすさを確かめられます。</p>
+        <p class="exp-sum">愛車で実際に駐車し、<span class="nw">広さと</span><span class="nw">乗り降りのしやすさを</span><span class="nw">確かめられます。</span></p>
         <p class="exp-detail" hidden>ご自身の愛車を実際にインナーガレージへお乗り入れいただき、収まり具合や乗り降りのしやすさを体感していただけます。奥行き6.3m・横幅3.5m・高さ2.8mの空間に、ご自宅の駐車場では分からなかった「余白」を確かめてください。</p>
         <span class="exp-more">詳しく見る ＋</span>
       </div>
       <div class="exp-card" role="button" tabindex="0">
         <div class="exp-card-img"><picture><source type="image/webp" srcset="slider/9_card.webp"><img loading="lazy" src="slider/9_card.jpg" alt="波の音に耳をすませる"></picture></div>
         <h3>波の音に耳をすませる</h3>
-        <p class="exp-sum">16.25帖のルーフバルコニーで、360°の眺望とさざ波の音を。</p>
+        <p class="exp-sum">16.25帖のルーフバルコニーで、<span class="nw">360°の眺望と</span><span class="nw">さざ波の音を。</span></p>
         <p class="exp-detail" hidden>16.25帖のルーフバルコニーから、360°パノラマで文学館の山と遠くの海を望む。耳をすませば、さざ波の音。都心では得られない開放感がここにあります。</p>
         <span class="exp-more">詳しく見る ＋</span>
       </div>
@@ -1793,7 +1795,7 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
   <div class="narrow">
     <div class="ch-head ch-head-center">
       <p class="jp-label">本物件を手がけた<br class="sp-only">プリンシパルホームとは</p>
-      <h2 class="ch-title">東京・神奈川を中心に、<br>累計2,000棟を<br class="sp-only">超える実績。</h2>
+      <h2 class="ch-title"><span class="nw">東京・神奈川を</span><span class="nw">中心に、</span><br>累計2,000棟を<br class="sp-only">超える実績。</h2>
     </div>
     <p class="body">プリンシパルホームは町田で始まり、22年。地域に根ざした家づくりを続け、数多くのご家族の夢を形にしてきました。</p>
     <figure class="about-photo"><img loading="lazy" src="about/office.jpg" srcset="about/office_sp.jpg 900w, about/office.jpg 2000w" sizes="(max-width:760px) 300px, 100vw" data-full="about/office.jpg" alt="プリンシパルホーム"></figure>
@@ -1851,7 +1853,7 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
     <div class="spec-block">
       <div class="spec-label">個別内覧のご案内</div>
       <div class="spec" style="max-width:640px;">
-        <p class="spec-lead">リビングの広がりや素材の手触り、屋上からの眺めを現地でお確かめいただけます。</p>
+        <p class="spec-lead"><span class="nw">リビングの広がりや</span><span class="nw">素材の手触り、</span><span class="nw">屋上からの眺めを</span><span class="nw">現地で</span><span class="nw">お確かめいただけます。</span></p>
         <div class="row"><span class="k">内覧可能日</span><span class="v">火曜・水曜を除く全ての曜日（完全予約制）</span></div>
         <div class="row"><span class="k">内覧可能時間</span><span class="v">10:00〜18:00<br>（所要時間 約60〜90分）</span></div>
         <div class="row"><span class="k">住所</span><span class="v"><a class="map-link" href="https://www.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E9%8E%8C%E5%80%89%E5%B8%82%E9%95%B7%E8%B0%B71%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener">神奈川県鎌倉市長谷1丁目</a></span></div>
@@ -1897,7 +1899,7 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
         <p>所要時間：約60〜90分<br>確定した日時に、ご案内した集合場所へお越しください。担当者が物件をご案内します。間取りや素材、設備について、気になる点を何でもお尋ねください。</p>
       </div>
     </div>
-    <p class="flow-note">※お申し込み時点では日時は確定していません。担当者が日時と集合場所をご案内します。</p>
+    <p class="flow-note"><span class="nw">※お申し込み時点では</span><span class="nw">日時は確定していません。</span><br class="sp-only"><span class="nw">担当者が日時と</span><span class="nw">集合場所をご案内します。</span></p>
     <div class="cta-block">
       <div class="cta-pair">
       <a href="#" class="btn btn-fill" data-open-form="viewing"><span>この物件の内覧を予約する</span><span class="arr">→</span></a>
@@ -1913,7 +1915,7 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
     <div class="ch-head ch-head-center">
       <p class="jp-label">FAQ</p>
       <h2 class="ch-title">よくあるご質問</h2>
-      <div class="ch-sub">「気になるけれど、まだ予約は早いかな？」と迷われている方へ。皆さまからよくいただくご質問にお答えします。</div>
+      <div class="ch-sub"><span class="nw">「気になるけれど、</span><span class="nw">まだ予約は早いかな？」と</span><span class="nw">迷われている方へ。</span><span class="nw">皆さまからよくいただく</span><span class="nw">ご質問にお答えします。</span></div>
     </div>
 
     <div class="faq-list">
