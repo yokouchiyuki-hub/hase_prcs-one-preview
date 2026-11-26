@@ -860,6 +860,10 @@ fbq('track', 'PageView');
   section[hidden]{display:none!important;}
   /* 企業情報の店舗写真：会社紹介の写真（.about-photo）と同じ表示。表の上に置くので上下の余白だけ調整 */
   .company-info .company-photo{margin-top:2.6em;margin-bottom:0;}
+  /* 店舗写真と外観写真を横に並べる（2枚合わせて会社紹介の写真1枚分の幅。どちらも16:9に切り抜く） */
+  .company-photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:.5em;}
+  .company-photo-pair figure{margin:0;overflow:hidden;}
+  @media(max-width:760px){ .company-photo-pair{gap:.35em;} }
   .reserve h2{text-align:center;font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:400;letter-spacing:.18em;margin-bottom:.6em;color:var(--ivory);}
   .reserve .fsub{text-align:center;color:#c5beb2;font-size:1rem;letter-spacing:.1em;margin-bottom:4em;font-weight:300;}
   .fsub-sp{display:none;}
@@ -1995,7 +1999,10 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
   <div class="narrow company-info" id="companyInfo">
     <p class="company-info-label">Company</p>
     <h2>企業情報</h2>
-    <figure class="about-photo company-photo"><picture><source type="image/webp" srcset="company/store_sp.webp 900w, company/store.webp 2000w" sizes="(max-width:760px) 100vw, 710px"><img loading="lazy" decoding="async" src="company/store.jpg" srcset="company/store_sp.jpg 900w, company/store.jpg 2000w" sizes="(max-width:760px) 100vw, 710px" width="2000" height="1333" data-full="company/store.jpg" alt="いい家みつかるプレシャスワン 店舗（モザイクモール港北4F）"></picture></figure>
+    <div class="about-photo company-photo company-photo-pair">
+      <figure><picture><source type="image/webp" srcset="company/store_sp.webp 700w, company/store.webp 1200w" sizes="(max-width:760px) 50vw, 355px"><img loading="lazy" decoding="async" src="company/store.jpg" srcset="company/store_sp.jpg 700w, company/store.jpg 1200w" sizes="(max-width:760px) 50vw, 355px" width="1200" height="800" data-full="company/store.jpg" alt="いい家みつかるプレシャスワン 店舗（モザイクモール港北4F）"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="company/exterior_sp.webp 700w, company/exterior.webp 1200w" sizes="(max-width:760px) 50vw, 355px"><img loading="lazy" decoding="async" src="company/exterior.jpg" srcset="company/exterior_sp.jpg 700w, company/exterior.jpg 1200w" sizes="(max-width:760px) 50vw, 355px" width="1200" height="900" data-full="company/exterior.jpg" alt="モザイクモール港北の外観"></picture></figure>
+    </div>
     <dl class="company-info-table">
       <dt>商号</dt>
       <dd>いい家みつかるプレシャスワン株式会社</dd>
