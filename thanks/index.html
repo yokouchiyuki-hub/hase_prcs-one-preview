@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script>
+/* 確認用ページ専用：フォームは実際には送信しない */
+(function(){
+  var f = window.fetch;
+  window.fetch = function(u, o){
+    if(typeof u === 'string' && /send\.php$/.test(u)){
+      return Promise.resolve(new Response('{"ok":true,"message":""}', {headers:{'Content-Type':'application/json'}}));
+    }
+    return f.apply(this, arguments);
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    var b = document.createElement('div');
+    b.textContent = '確認用ページです（フォームは送信されません）';
+    b.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:2147483647;background:#b5564e;color:#fff;font:12px/1.6 sans-serif;text-align:center;padding:2px 8px;pointer-events:none;letter-spacing:.08em;';
+    document.body.appendChild(b);
+  });
+})();
+</script>
+<meta charset="UTF-8">
+<script>
+/* ★ローカル検証（localhost / file:// / 社内IP など）では計測タグ（GTM・gtag・Clarity・Meta Pixel）を読み込まない。
+   制作中・確認中のアクセスが GA4・Clarity・Meta Pixel（広告の最適化データ）に混ざるのを防ぐ。本番のURLでは今までどおり全て発火する。 */
+window.__isLocal = (function(){
+  var h = location.hostname;
+  return /\.github\.io$/.test(h) || location.protocol === 'file:'
+      || h === 'localhost' || h === '127.0.0.1' || h === '::1' || h === ''
+      || /\.(local|test)$/.test(h)
+      || /^192\.168\./.test(h) || /^10\./.test(h)
+      || /^172\.(1[6-9]|2\d|3[01])\./.test(h);
+})();
+if(window.__isLocal && window.console && console.info){
+  console.info('[LP] ローカル環境のため、計測タグ（GTM / gtag / Clarity / Meta Pixel）は読み込みません。公開後のURLでは動作します。');
+}
+</script>
+<!-- Google Tag Manager -->
+<script>if(!window.__isLocal)(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KCW7GWWK');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js)（ローカルでは読み込まない） -->
+<script>
+  if(!window.__isLocal){
+    var t = document.createElement('script'); t.async = true;
+    t.src = 'https://www.googletagmanager.com/gtag/js?id=G-WRLEV9SBRY';
+    document.head.appendChild(t);
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WRLEV9SBRY');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  if(!window.__isLocal)(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "rnuqyx3116");
+</script>
+<!-- Meta Pixel Code -->
+<script>
+if(!window.__isLocal){
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '954407957033133');
+fbq('track', 'PageView');
+}
+</script>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<title>お申し込みを受け付けました｜鎌倉・長谷 HASE</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@300;400;600&family=EB+Garamond:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@300;400;600&family=EB+Garamond:wght@400;500&display=swap"></noscript>
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#0d0d0f;
+    --ivory:#F8F7F3;
+    --ivory-deep:#e8e4dc;
+    --ink-grey:#9a9388;
+    --gold:#b89a6a;
+    --line:rgba(255,255,255,0.12);
+    --mincho:'Shippori Mincho','Yu Mincho','YuMincho','Hiragino Mincho ProN',serif;
+    --serif:'EB Garamond',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{overflow-x:hidden;}
+  body{
+    font-family:var(--mincho);
+    background:var(--bg);
+    color:var(--ivory);
+    line-height:2.0;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:0.06em;
+    min-height:100vh;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    mix-blend-mode:screen;
+    opacity:.35;
+  }
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+
+  .done-inner{max-width:680px;margin:0 auto;padding:14vh clamp(1.6rem,6vw,3rem) 10vh;text-align:center;}
+  .done-en{font-family:var(--serif);font-size:.8rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:2.2em;}
+  .sp-br{display:none;}
+  @media(max-width:760px){.sp-br{display:inline;}}
+  .done-title{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:400;letter-spacing:.18em;color:var(--ivory);margin-bottom:2.4em;}
+  .done-body p{font-size:1rem;line-height:2.4;letter-spacing:.1em;color:#c5beb2;font-weight:300;margin-bottom:1.8em;}
+  .done-body-sp{display:none;}
+  .done-cta-wrap{display:flex;flex-direction:column;align-items:stretch;width:fit-content;margin:2.4em auto 0;}
+  .done-tel{display:block;padding:1.6em 2.4em;border:1px solid rgba(248,247,243,.45);}
+  .form-tel-link{display:inline-flex;align-items:center;gap:.6em;text-decoration:none;color:var(--ivory);}
+  .form-tel-icon{width:28px;height:auto;opacity:.9;}
+  .form-tel-number{font-family:var(--serif);font-size:1.4rem;letter-spacing:.1em;font-weight:400;}
+  .done-tel-info{font-size:.875rem;color:var(--ink-grey);line-height:1.8;letter-spacing:.1em;font-weight:300;margin-top:.6em;}
+  .done-foot{font-size:1rem;line-height:2.4;letter-spacing:.1em;color:#c5beb2;font-weight:300;margin-top:2.8em;}
+  .done-foot-sp{display:none;}
+  .btn{
+    display:inline-flex;align-items:center;gap:1em;
+    font-family:var(--mincho);font-size:.92rem;letter-spacing:.22em;font-weight:300;
+    background:var(--ivory);color:#0d0d0f;
+    padding:14px 2.6em;text-decoration:none;
+    border:1px solid var(--ivory);position:relative;overflow:hidden;
+    transition:opacity .3s;
+    margin-top:2.8em;
+    justify-content:center;
+    width:100%;
+  }
+  .btn:hover{opacity:.85;}
+  .btn span{position:relative;z-index:2;}
+  .done-company{display:block;margin:5em auto 0;width:fit-content;opacity:.5;transition:opacity .4s;}
+  .done-company:hover{opacity:.8;}
+  .done-company img{max-width:200px;height:auto;display:block;width:auto;}
+
+  @media(max-width:760px){
+    .done-body-pc{display:none;}
+    .done-body-sp{display:block;}
+    .done-foot-pc{display:none;}
+    .done-foot-sp{display:block;}
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCW7GWWK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Meta Pixel Code (noscript) -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code (noscript) -->
+<div class="done-inner">
+  <p class="done-en">With sincere appreciation</p>
+  <div data-type="viewing">
+    <h2 class="done-title">内覧のお申し込みを<br class="sp-br">受け付けました</h2>
+    <div class="done-body done-body-pc">
+      <p>このたびは、HASEの内覧をお申し込みいただき、<br>誠にありがとうございます。</p>
+      <p>担当者より日時と集合場所をご案内します。<br>担当者からのご連絡をもって、内覧日時が確定します。</p>
+      <p>万が一、3営業日を過ぎても担当者からの連絡がない場合は、<br>お手数ではございますが、下記までお問い合わせください。</p>
+    </div>
+    <div class="done-body done-body-sp">
+      <p>このたびは、<br>HASEの内覧をお申し込みいただき、<br>誠にありがとうございます。</p>
+      <p>担当者より日時と<br>集合場所をご案内します。<br>担当者からのご連絡をもって、<br>内覧日時が確定します。</p>
+      <p>万が一、3営業日を過ぎても<br>担当者からの連絡がない場合は、<br>お手数ではございますが、<br>下記までお問い合わせください。</p>
+    </div>
+  </div>
+  <div data-type="brochure" hidden>
+    <h2 class="done-title">物件資料のご請求を<br class="sp-br">受け付けました</h2>
+    <div class="done-body done-body-pc">
+      <p>このたびは、HASEの物件資料をご請求いただき、<br>誠にありがとうございます。</p>
+      <p>ご入力のメールアドレスに、<br>HASEの物件資料をご覧いただけるリンクをお送りします。</p>
+      <p>メールが届かない場合は、迷惑メールフォルダをご確認のうえ、<br>下記までお問い合わせください。</p>
+    </div>
+    <div class="done-body done-body-sp">
+      <p>このたびは、<br>HASEの物件資料をご請求いただき、<br>誠にありがとうございます。</p>
+      <p>ご入力のメールアドレスに、<br>HASEの物件資料を<br>ご覧いただけるリンクをお送りします。</p>
+      <p>メールが届かない場合は、<br>迷惑メールフォルダをご確認のうえ、<br>下記までお問い合わせください。</p>
+    </div>
+  </div>
+  <script>
+  try{
+    if(new URLSearchParams(location.search).get('type')==='brochure'){
+      document.querySelector('[data-type="brochure"]').hidden=false;
+      document.querySelector('[data-type="viewing"]').hidden=true;
+    }
+  }catch(e){}
+  </script>
+
+  <div class="done-cta-wrap">
+    <div class="done-tel">
+      <a href="tel:0120021541" class="form-tel-link">
+        <img src="../img/free_dial_icon.png" alt="フリーダイヤル" class="form-tel-icon">
+        <span class="form-tel-number">0120-021-541</span>
+      </a>
+      <div class="done-tel-info">受付時間 9:30〜18:00｜火・水曜定休</div>
+    </div>
+    <a href="../" class="btn"><span>HASEのページへ戻る</span></a>
+  </div>
+
+  <a href="https://pr-h.net/" target="_blank" rel="noopener" class="done-company">
+    <img src="../web2/company_logo.png" alt="運営会社">
+  </a>
+</div>
+</body>
+</html>
