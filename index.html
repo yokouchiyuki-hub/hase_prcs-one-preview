@@ -857,6 +857,15 @@ fbq('track', 'PageView');
   .company-map-frame{aspect-ratio:16/9;background:#1a1a1d;}
   .company-map-link{margin:.9em 0 0;font-size:.82rem;letter-spacing:.06em;}
   .company-map-frame iframe{display:block;width:100%;height:100%;border:0;}
+  section[hidden]{display:none!important;}
+  /* プレシャスワンの店舗写真（3枚横並び。SPは1枚目を大きく、残り2枚を下に並べる） */
+  .company-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin:2.6em 0 0;}
+  .company-photos figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:#1a1a1d;}
+  .company-photos img{display:block;width:100%;height:100%;object-fit:cover;}
+  @media(max-width:760px){
+    .company-photos{grid-template-columns:1fr 1fr;gap:.4em;}
+    .company-photos figure:first-child{grid-column:1 / -1;}
+  }
   .reserve h2{text-align:center;font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:400;letter-spacing:.18em;margin-bottom:.6em;color:var(--ivory);}
   .reserve .fsub{text-align:center;color:#c5beb2;font-size:1rem;letter-spacing:.1em;margin-bottom:4em;font-weight:300;}
   .fsub-sp{display:none;}
@@ -1790,8 +1799,8 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ============ プリンシパルホームとは ============ -->
-<section class="chapter" id="company" style="background:linear-gradient(rgba(13,13,15,.5),rgba(13,13,15,.5)) center/cover no-repeat fixed;padding-bottom:80px;" data-bg="bg_img/Black-wood" data-bg-fmt="jpg" data-bg-overlay="linear-gradient(rgba(13,13,15,.5),rgba(13,13,15,.5)) center/cover no-repeat fixed">
+<!-- ============ プリンシパルホームとは（非表示：プレシャスワン向けLPのため。中の申込ボタンも含めて非表示。戻すときは hidden を外す） ============ -->
+<section class="chapter" id="company" hidden style="background:linear-gradient(rgba(13,13,15,.5),rgba(13,13,15,.5)) center/cover no-repeat fixed;padding-bottom:80px;" data-bg="bg_img/Black-wood" data-bg-fmt="jpg" data-bg-overlay="linear-gradient(rgba(13,13,15,.5),rgba(13,13,15,.5)) center/cover no-repeat fixed">
   <div class="narrow">
     <div class="ch-head ch-head-center">
       <p class="jp-label">本物件を手がけた<br class="sp-only">プリンシパルホームとは</p>
@@ -1988,38 +1997,57 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
   </div>
 
   <div class="booking-bg booking-cta" id="reserveCta" data-bg="img/form_bg">
-  <!-- 企業情報（構成は modelhouse01.pr-h.net/utukushigaoka/ の企業情報に準拠＋町田ショールームの地図） -->
+  <!-- 企業情報：いい家みつかるプレシャスワン株式会社（https://www.prcs-one.com/company/ の会社概要・写真を掲載。2026-11-26 取得。変更があれば同ページに合わせて更新する） -->
   <div class="narrow company-info" id="companyInfo">
     <p class="company-info-label">Company</p>
     <h2>企業情報</h2>
+    <div class="company-photos">
+      <figure><picture><source type="image/webp" srcset="company/store_1.webp"><img loading="lazy" decoding="async" src="company/store_1.jpg" width="500" height="375" alt="モザイクモール港北の外観"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="company/store_2.webp"><img loading="lazy" decoding="async" src="company/store_2.jpg" width="500" height="375" alt="店内の様子"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="company/store_3.webp"><img loading="lazy" decoding="async" src="company/store_3.jpg" width="500" height="375" alt="キッズスペース"></picture></figure>
+    </div>
     <dl class="company-info-table">
-      <dt>会社名</dt>
-      <dd>株式会社 プリンシパルホーム</dd>
+      <dt>商号</dt>
+      <dd>いい家みつかるプレシャスワン株式会社</dd>
       <dt>所在地</dt>
-      <dd><strong>【本社】</strong>〒194-0012 <a class="map-link" href="https://maps.app.goo.gl/MEjYuYZ5FmELgLDJ6" target="_blank" rel="noopener">東京都町田市金森3丁目23-11</a><br>TEL：042-706-8386（代表）FAX：042-706-8387
+      <dd>〒224-0003 <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E9%83%BD%E7%AD%91%E5%8C%BA%E4%B8%AD%E5%B7%9D%E4%B8%AD%E5%A4%AE1%E4%B8%81%E7%9B%AE31-1%20%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%AB%E6%B8%AF%E5%8C%97" target="_blank" rel="noopener"><span class="nw">神奈川県横浜市都筑区</span><span class="nw">中川中央1丁目31-1</span><br>モザイクモール港北 4F</a>
         <div class="company-showroom">
-          <p class="company-showroom-title">町田ショールーム（本社）</p>
           <!-- 地図は画面に近づいてから読み込む（data-src → src。Google マップの埋め込みは重いため） -->
-          <div class="company-map-frame"><iframe data-src="https://maps.google.com/maps?q=35.5279303,139.4635156+(%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B7%E3%83%91%E3%83%AB%E3%83%9B%E3%83%BC%E3%83%A0)&amp;z=17&amp;hl=ja&amp;output=embed" title="町田ショールームの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-          <p class="company-map-link"><a class="map-link" href="https://maps.app.goo.gl/MEjYuYZ5FmELgLDJ6" target="_blank" rel="noopener">Google マップで見る</a></p>
+          <div class="company-map-frame"><iframe data-src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E9%83%BD%E7%AD%91%E5%8C%BA%E4%B8%AD%E5%B7%9D%E4%B8%AD%E5%A4%AE1%E4%B8%81%E7%9B%AE31-1%20%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%AB%E6%B8%AF%E5%8C%97&amp;z=17&amp;hl=ja&amp;output=embed" title="いい家みつかるプレシャスワンの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <p class="company-map-link"><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E9%83%BD%E7%AD%91%E5%8C%BA%E4%B8%AD%E5%B7%9D%E4%B8%AD%E5%A4%AE1%E4%B8%81%E7%9B%AE31-1%20%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%AB%E6%B8%AF%E5%8C%97" target="_blank" rel="noopener">Google マップで見る</a></p>
         </div>
-        <strong>【横浜支店】</strong>〒231-0011 横浜市中区太田町4丁目48番地川島ビル5階<br>TEL：045-227-7557（代表）FAX：045-227-7558<br><br><strong>【シカゴ支社】</strong>Principal Home U.S.A. Inc.,<br>6127 South University Avenue Ste 110B<br>Chicago, IL 60637<br>TEL：312-593-8591<br><br><strong>【京都事業推進室】</strong>〒612-8445 京都府京都市伏見区竹田浄菩提院町195<br><a href="https://re-kyu.jp/" target="_blank" rel="noopener">https://re-kyu.jp/</a></dd>
-      <dt>設立</dt>
-      <dd>平成16年12月1日</dd>
-      <dt>資本金</dt>
-      <dd>9,500万円</dd>
-      <dt>代表者</dt>
-      <dd>代表取締役 玉井 圭</dd>
+      </dd>
+      <dt>交通</dt>
+      <dd>ブルーライン センター北駅 徒歩2分</dd>
+      <dt>営業時間</dt>
+      <dd>10:00〜20:00</dd>
+      <dt>定休日</dt>
+      <dd>定休日なし</dd>
+      <dt>フリーダイヤル</dt>
+      <dd><a href="tel:0120054410">0120-054-410</a></dd>
+      <dt>電話番号</dt>
+      <dd><a href="tel:0455304410">045-530-4410</a></dd>
+      <dt>FAX</dt>
+      <dd>045-530-4411</dd>
+      <dt>メールアドレス</dt>
+      <dd><a href="mailto:info@prcs-one.com">info@prcs-one.com</a></dd>
       <dt>事業内容</dt>
-      <dd>土木及び建築工事の施工/設計・監理及び請負／住宅の増改築/建替え及び住宅リフォーム／不動産の売買/仲介/賃貸/管理及び鑑定評価に関する事業／不動産の有効利用に関するコンサルタント業務／損害保険代理業</dd>
+      <dd>●不動産の売買、仲介、賃貸、管理<br>●注文住宅の企画・販売<br>●損害保険代理業<br>●上記各号に附帯する一切の業務</dd>
+      <dt>代表者名</dt>
+      <dd>髙橋克実</dd>
       <dt>免許番号</dt>
-      <dd>【建設業許可】東京都知事（特-8）第162397号<br>【宅建業免許】国土交通大臣（3）第8714号<br>【一級建築士事務所登録】東京都知事登録第67412号</dd>
+      <dd>神奈川県知事（2）第30515号</dd>
       <dt>加盟団体</dt>
-      <dd>公益社団法人全国宅地建物取引業協会会員/公益社団法人東京都宅地建物取引業協会会員/公益社団法人首都圏不動産公正取引協議会加盟/住宅保証機構株式会社/財団法人神奈川県建築安全協会</dd>
-      <dt>委託研究</dt>
-      <dd>研究題目「換気量と結露についての分析」<br>より快適な住まいづくりを目指し平成26年5月21日より<br>学校法人神奈川大学様に上記研究を委託しております。</dd>
+      <dd>●（公社）全国宅地建物取引業保証協会会員<br>●（公社）神奈川県宅地建物取引業協会会員<br>●（公社）首都圏不動産公正取引協議会加盟</dd>
+      <dt>取引銀行</dt>
+      <dd>●横浜銀行<br>●東日本銀行<br>●三井住友銀行<br>●三菱UFJ銀行<br>●りそな銀行<br>●静岡銀行</dd>
+      <dt>資本金</dt>
+      <dd>1,000万円</dd>
+      <dt>従業員数</dt>
+      <dd>10名</dd>
     </dl>
   </div>
+
   <div class="narrow" id="apply">
     <h2>HASEの<br class="sp-only">内覧予約・資料請求</h2>
     <p class="fsub fsub-pc">個別内覧は完全予約制です。<br>物件資料のみのご請求も承ります。</p>
