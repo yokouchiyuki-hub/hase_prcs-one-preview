@@ -858,14 +858,8 @@ fbq('track', 'PageView');
   .company-map-link{margin:.9em 0 0;font-size:.82rem;letter-spacing:.06em;}
   .company-map-frame iframe{display:block;width:100%;height:100%;border:0;}
   section[hidden]{display:none!important;}
-  /* プレシャスワンの店舗写真（3枚横並び。SPは1枚目を大きく、残り2枚を下に並べる） */
-  .company-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin:2.6em 0 0;}
-  .company-photos figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:#1a1a1d;}
-  .company-photos img{display:block;width:100%;height:100%;object-fit:cover;}
-  @media(max-width:760px){
-    .company-photos{grid-template-columns:1fr 1fr;gap:.4em;}
-    .company-photos figure:first-child{grid-column:1 / -1;}
-  }
+  /* 企業情報の店舗写真：会社紹介の写真（.about-photo）と同じ表示。表の上に置くので上下の余白だけ調整 */
+  .company-info .company-photo{margin-top:2.6em;margin-bottom:0;}
   .reserve h2{text-align:center;font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:400;letter-spacing:.18em;margin-bottom:.6em;color:var(--ivory);}
   .reserve .fsub{text-align:center;color:#c5beb2;font-size:1rem;letter-spacing:.1em;margin-bottom:4em;font-weight:300;}
   .fsub-sp{display:none;}
@@ -2001,11 +1995,7 @@ src="https://www.facebook.com/tr?id=954407957033133&ev=PageView&noscript=1"
   <div class="narrow company-info" id="companyInfo">
     <p class="company-info-label">Company</p>
     <h2>企業情報</h2>
-    <div class="company-photos">
-      <figure><picture><source type="image/webp" srcset="company/store_1.webp"><img loading="lazy" decoding="async" src="company/store_1.jpg" width="500" height="375" alt="モザイクモール港北の外観"></picture></figure>
-      <figure><picture><source type="image/webp" srcset="company/store_2.webp"><img loading="lazy" decoding="async" src="company/store_2.jpg" width="500" height="375" alt="店内の様子"></picture></figure>
-      <figure><picture><source type="image/webp" srcset="company/store_3.webp"><img loading="lazy" decoding="async" src="company/store_3.jpg" width="500" height="375" alt="キッズスペース"></picture></figure>
-    </div>
+    <figure class="about-photo company-photo"><picture><source type="image/webp" srcset="company/store_sp.webp 900w, company/store.webp 2000w" sizes="(max-width:760px) 100vw, 710px"><img loading="lazy" decoding="async" src="company/store.jpg" srcset="company/store_sp.jpg 900w, company/store.jpg 2000w" sizes="(max-width:760px) 100vw, 710px" width="2000" height="1333" data-full="company/store.jpg" alt="いい家みつかるプレシャスワン 店舗（モザイクモール港北4F）"></picture></figure>
     <dl class="company-info-table">
       <dt>商号</dt>
       <dd>いい家みつかるプレシャスワン株式会社</dd>
