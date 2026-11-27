@@ -503,7 +503,6 @@ fbq('track', 'PageView');
   .mat-strip-txt .name{font-size:1.3rem;font-weight:400;letter-spacing:.14em;color:var(--ivory);}
   .mat-strip-txt .en{font-family:var(--serif);font-size:.875rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;}
   /* PCでは、物件の特徴の見出しの上に余白を足す */
-  @media(min-width:761px){ #features .ch-head{margin-top:100px;} }
   /* 境界を消す設計：3項目のタイトルだけ差し色（ゴールド）＋大きめに */
   #features .mat-strip-txt .name{font-size:1.5rem;line-height:1.6;color:#f8d8a5;}
   /* 前半のリード部分だけは白のまま。差し色はキーワードに限る */
@@ -932,8 +931,11 @@ fbq('track', 'PageView');
   .submit:hover{background:rgba(248,247,243,.15);border-color:rgba(248,247,243,.6);}
   .note{text-align:center;font-size:.875rem;color:#9a9388;margin-top:2em;line-height:2;letter-spacing:.08em;font-weight:300;}
   /* 見学会詳細：SPでは下余白を詰める */
-  #details{padding-bottom:120px;}
-  @media(max-width:760px){ #details{padding-bottom:70px;} }
+  /* 見出しの上の見た目の空き：どのセクションも「見出しのあるセクションの上余白（.chapter の 10vh）」だけになるよう、
+     背景が同系色で続く手前のセクションは末尾に余白を残さない（基準は「設計力で叶えた"暮らしやすさ"」の上の空き） */
+  #details{padding-bottom:0;}
+  #experience .cta-block,#flow .cta-block{padding-bottom:0;}
+  #visit,#visit .cta-after-visit{padding-bottom:0 !important;}
   /* 交通アクセスの行の中に収める注釈 */
   .spec-todo{color:#e0896b;font-weight:600;}
   .spec-note{display:block;text-align:left;margin-top:.9em;font-size:.875rem;color:#9a9388;line-height:2;letter-spacing:.08em;font-weight:300;}
